@@ -12,7 +12,7 @@ Um container é um padrão de unidade de software que empacota o código e todas
 
 ### **Containers vs Máquinas Virtuais**
 
-![Screenshot from 2022-02-08 09-13-42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94cd8fa2-9f99-4d56-8990-dd70169da270/Screenshot_from_2022-02-08_09-13-42.png)
+![Screenshot from 2022-02-08 09-13-42.png](img/01.png)
 
 **CONTAINERS**
 
@@ -61,17 +61,17 @@ EXPOSE: 8000
 
 Quando criamos imagens, estamos criando processos. É importante entender que imagens tem estados imutáveis, ou seja, não podem ser alteradas. Além disso, uma camada de leitura e escrita nas imagens, que permitem manipular arquivos, porém ao derrubar essa imagem e levantar novamente, esses arquivos serão perdidos.
 
-![Screenshot from 2022-02-08 10-51-44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/209c308d-539d-4269-a8e2-9d76f7c43b08/Screenshot_from_2022-02-08_10-51-44.png)
+![Screenshot from 2022-02-08 10-51-44.png](img/02.png)
 
 **Arquitetura do Docker**
 
-![Screenshot from 2022-02-08 10-56-18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f68965c-1b7c-4894-a275-1aeff8c42de2/Screenshot_from_2022-02-08_10-56-18.png)
+![Screenshot from 2022-02-08 10-56-18.png](img/03.png)
 
 Docker uses a client-server architecture. The Docker *client* talks to the Docker *daemon*, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon *can* run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface. Another Docker client is Docker Compose, that lets you work with applications consisting of a set of containers.
 
 O docker host tem também um cache, que evita uso de bando desnecessário ao baixar imagens que já foram previamente baixadas. Outro recurso importante, é o gerenciamento de volumes que ele realiza, que pode montar um volume local da máquina em um container, além de um recurso de gerenciamento de network.
 
-![Screenshot from 2022-02-08 11-02-33.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66991a60-9378-43cb-a767-7e837b6a3e0a/Screenshot_from_2022-02-08_11-02-33.png)
+![Screenshot from 2022-02-08 11-02-33.png](img/04.png)
 
 ### Docker - Comandos
 
