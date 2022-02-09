@@ -4,13 +4,13 @@ Estudo realizado usando como base no vídeo Wesley Willians do canal [**Full Cyc
 
 [**Documentação Docker**](https://docs.docker.com/)
 
-### **Docker - Definição:**
+## **Docker - Definição:**
 
 Docker é um conjunto de plataforma como produto de serviços que utiliza virtualização a nível de Sistema Operacional para entregar software em pacotes chamados **containers**. Containers são isolados uns dos outros e contém seus próprios softwares, bibliotecas e arquivos de configuração; eles podem se comunicar uns com os outros através de canais bem definidos.
 
 - Wikipedia
 
-### **Containers - Definição:**
+## **Containers - Definição:**
 
 Um container é um padrão de unidade de software que empacota o código e todas as dependências de uma aplicação fazendo que a mesma seja executada rapidamente de forma confiável de um ambiente computacional para o outro.
 
@@ -20,11 +20,11 @@ Um container é um padrão de unidade de software que empacota o código e todas
 
 **CONTAINERS**
 
-Containers are an abstraction at the app layer that packages code and dependencies together. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space. Containers take up less space than VMs (container images are typically tens of MBs in size), can handle more applications and require fewer VMs and Operating systems.
+Os contêineres são uma abstração na camada de aplicação que embala código e dependências em conjunto. Vários recipientes podem funcionar na mesma máquina e compartilhar o kernel do sistema operacional com outros recipientes, cada um funcionando como processos isolados no espaço do usuário. Os contêineres ocupam menos espaço do que as VMs (as imagens dos contêineres são tipicamente dezenas de MBs de tamanho), podem lidar com mais aplicações e requerem menos VMs e sistemas operacionais.
 
 **VIRTUAL MACHINES**
 
-Virtual machines (VMs) are an abstraction of physical hardware turning one server into many servers. The hypervisor allows multiple VMs to run on a single machine. Each VM includes a full copy of an operating system, the application, necessary binaries and libraries - taking up tens of GBs. VMs can also be slow to boot.
+Máquinas virtuais (VMs) são uma abstração do hardware físico, transformando um servidor em muitos servidores. O hypervisor permite que várias VMs funcionem em uma única máquina. Cada VM inclui uma cópia completa de um sistema operacional, a aplicação, os binários necessários e bibliotecas - ocupando dezenas de GBs. As VMs também podem ser lentas de inicialização.
 
 ### Como funcionam os Containers?
 
@@ -67,13 +67,13 @@ Quando criamos imagens, estamos criando processos. É importante entender que im
 
 ![Screenshot from 2022-02-08 10-51-44.png](img/02.png)
 
-**Arquitetura do Docker**
+### Arquitetura do Docker
 
 ![Screenshot from 2022-02-08 10-56-18.png](img/03.png)
 
-Docker uses a client-server architecture. The Docker *client* talks to the Docker *daemon*, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon *can* run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface. Another Docker client is Docker Compose, that lets you work with applications consisting of a set of containers.
+O Docker utiliza uma arquitetura cliente-servidor. O Docker *cliente* fala com o Docker *daemon*, que faz o levantamento pesado do prédio, a execução e a distribuição de seus containers Docker. O cliente Docker e o daemon *can* funcionam no mesmo sistema, ou você pode conectar um cliente Docker a um daemon Docker remoto. O cliente Docker e o daemon se comunicam usando uma API REST, sobre soquetes UNIX ou uma interface de rede. Outro cliente Docker é o Docker Compose, que permite trabalhar com aplicações que consistem em um conjunto de containers.
 
-O docker host tem também um cache, que evita uso de bando desnecessário ao baixar imagens que já foram previamente baixadas. Outro recurso importante, é o gerenciamento de volumes que ele realiza, que pode montar um volume local da máquina em um container, além de um recurso de gerenciamento de network.
+O docker host tem também um cache, que evita uso de banda desnecessário ao baixar imagens que já foram previamente baixadas. Outro recurso importante, é o gerenciamento de volumes que ele realiza, que pode montar um volume local da máquina em um container, além de um recurso de gerenciamento de networks.
 
 ![Screenshot from 2022-02-08 11-02-33.png](img/04.png)
 
@@ -88,36 +88,36 @@ O docker host tem também um cache, que evita uso de bando desnecessário ao bai
     Cria um container a partir de uma imagem.
     
 
-Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
+    Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
 
-```bash
-docker run hello-world
-```
+    ```bash
+    docker run hello-world
+    ```
 
-Cria e executa um container a partir de uma imagem do ubuntu e executa o bash
+    Cria e executa um container a partir de uma imagem do ubuntu e executa o bash
 
-```bash
-docker run ubuntu /bin/bash
-```
+    ```bash
+    docker run ubuntu /bin/bash
+    ```
 
-Cria e executa um container do servidor nginx e redireciona toda requisição na porta **8080** do computador host para a porta **80** do container
+    Cria e executa um container do servidor nginx e redireciona toda requisição na porta **8080** do computador host para a porta **80** do container
 
-```bash
-docker run -p 8080:80 nginx
-```
+    ```bash
+    docker run -p 8080:80 nginx
+    ```
 
-Quando executamos o docker run de forma normal, o processo em execução fica “preso” ao nosso terminal, para evitar isso devemos executar o comando em modo detached, ou seja, desvinculado do nosso terminal, basta utilizar o parâmetro ***-d***
+    Quando executamos o docker run de forma normal, o processo em execução fica “preso” ao nosso terminal, para evitar isso devemos executar o comando em modo detached, ou seja, desvinculado do nosso terminal, basta utilizar o parâmetro ***-d***
 
-```bash
-docker run -d -p 8080:80 nginx
-```
+    ```bash
+    docker run -d -p 8080:80 nginx
+    ```
 
-O parâmetro ***—name*** nos permite atribuir um nome a um container.
+    O parâmetro ***—name*** nos permite atribuir um nome a um container.
 
-```bash
+    ```bash
 
-docker run --name nginx -d -p 8080:80 nginx
-```
+    docker run --name nginx -d -p 8080:80 nginx
+    ```
 
 - **docker ps**
     
@@ -188,7 +188,7 @@ docker run --name nginx -d -p 8080:80 nginx
     Remove uma imagem do computador, caso um ***docker run*** seja chamado a imagem deverá ser baixada novamente.
     
     ```bash
-    **docker rmi nginx**
+    docker rmi nginx
     ```
     
 - **docker push <IMAGEM>**
@@ -204,7 +204,7 @@ docker run --name nginx -d -p 8080:80 nginx
 
 Os arquivos de configuração recebem definições para gerar uma imagem.
 
-- **Exemplo 01**
+## Exemplo 01
     
     
     **Em nosso exemplo, implementamos um servidor simples que apenas recebe uma requisição http e devolve uma frase na tela, desenvolvido em linguagem Go:**
@@ -234,7 +234,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     
     *Dockerfile*
     
-    ```docker
+    ``` bash
     # Definição para usar a imagem golang versão 1.14 como base
     FROM golang:1.14
     
@@ -253,7 +253,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     
     Para criarmos nossa imagem, precisamos executar o seguinte comando:
     
-    ```bash
+    ``` bash
     # o parâmetro *-t indica a tag (nome) da nossa imagem, seguido pelo nome e pelo caminho do arquivo Dockerfile*
     docker build -t estudodocker/exemplo-01 .
     ```
@@ -265,7 +265,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     docker run -p 8080:8080 estudodocker/exemplo-01
     ```
     
-- Exemplo 02
+## Exemplo 02
     
     Quando precisamos gerenciar diversos containers que precisam ser executados em conjunto, os comandos tendem a ficar mais complexos, para isso, utilizamos uma ferramenta chamada **[Docker Compose](https://docs.docker.com/compose/)**, que nos ajuda nessa tarefa.
     
