@@ -1,0 +1,32 @@
+# define a versão do nosso compose
+version: '3'
+
+# define os serviços que iremos usar
+services:
+  
+  # cria um container com um serviço chamado 
+  webservergo:
+    # executa nosso docker file no caminho .
+    build: .
+    # redireciona a porta 8081 do host para porta 8080 do container
+    ports:
+      - 8081:8080
+
+  # cria um container com um serviço chamado nginx
+  nginx:
+    # usa como imagem base a imagem do nginx  
+    image: nginx
+    # compartilha o volume ./nginx do host no endereço /usr/share/nginx/html do container
+    volumes: 
+      - ./nginx:/usr/share/nginx/html
+    # redireciona a porta 8080 do host para a porta 80 do container
+    ports:
+      - 8080:80
+
+  # cria container com um serviço chamado redis 
+  redis:
+    # usa como base a imagem do redis alpine
+    image: redis:alpine
+    # expoe a porta 6379 para que outros containers possam acessar
+    expose: 
+      - 6379
