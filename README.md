@@ -79,6 +79,7 @@ O docker host tem também um cache, que evita uso de banda desnecessário ao bai
 
 ### Docker - Comandos
 
+
 [**Instalação**](https://docs.docker.com/get-docker/)
 
 [**Docker Hub - Repositório de Imagens**](http://hub.docker.com)
@@ -88,33 +89,32 @@ O docker host tem também um cache, que evita uso de banda desnecessário ao bai
    Cria um container a partir de uma imagem.
    Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
 
-```bash
-docker run hello-world
-```
+  ```bash
+  docker run hello-world
+  ```
+    Cria e executa um container a partir de uma imagem do ubuntu e executa o bash
 
-​    Cria e executa um container a partir de uma imagem do ubuntu e executa o bash
+  ```bash
+  docker run ubuntu /bin/bash
+  ```
+    
+    Cria e executa um container do servidor nginx e redireciona toda requisição na porta **8080** do computador host para a porta **80** do container
 
-```bash
-docker run ubuntu /bin/bash
-```
+  ```bash
+  docker run -p 8080:80 nginx
+  ```
 
-​    Cria e executa um container do servidor nginx e redireciona toda requisição na porta **8080** do computador host para a porta **80** do container
+    Quando executamos o docker run de forma normal, o processo em execução fica “preso” ao nosso terminal, para evitar isso devemos executar o comando em modo detached, ou seja, desvinculado do nosso terminal, basta utilizar o parâmetro ***-d***
 
-```bash
-docker run -p 8080:80 nginx
-```
+  ```bash
+  docker run -d -p 8080:80 nginx
+  ```
 
-​    Quando executamos o docker run de forma normal, o processo em execução fica “preso” ao nosso terminal, para evitar isso devemos executar o comando em modo detached, ou seja, desvinculado do nosso terminal, basta utilizar o parâmetro ***-d***
+    O parâmetro ***—name*** nos permite atribuir um nome a um container.
 
-```bash
-docker run -d -p 8080:80 nginx
-```
-
-​    O parâmetro ***—name*** nos permite atribuir um nome a um container.
-
-```bash
-docker run --name nginx -d -p 8080:80 nginx
-```
+  ```bash
+  docker run --name nginx -d -p 8080:80 nginx
+  ```
 
 - **docker ps**
   
