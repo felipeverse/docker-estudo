@@ -85,39 +85,36 @@ O docker host tem também um cache, que evita uso de banda desnecessário ao bai
 
 - **Docker run <IMAGE>**
   
-    Cria um container a partir de uma imagem.
-  <<<<<<< HEAD
+   Cria um container a partir de uma imagem.
+   Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
 
-       Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
-=======
-    Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
+```bash
+docker run hello-world
+```
 
-  ```bash
-  docker run hello-world
-  ```
 ​    Cria e executa um container a partir de uma imagem do ubuntu e executa o bash
 
-  ```bash
-  docker run ubuntu /bin/bash
-  ```
+```bash
+docker run ubuntu /bin/bash
+```
 
 ​    Cria e executa um container do servidor nginx e redireciona toda requisição na porta **8080** do computador host para a porta **80** do container
 
-  ```bash
-  docker run -p 8080:80 nginx
-  ```
+```bash
+docker run -p 8080:80 nginx
+```
 
 ​    Quando executamos o docker run de forma normal, o processo em execução fica “preso” ao nosso terminal, para evitar isso devemos executar o comando em modo detached, ou seja, desvinculado do nosso terminal, basta utilizar o parâmetro ***-d***
 
-  ```bash
-  docker run -d -p 8080:80 nginx
-  ```
+```bash
+docker run -d -p 8080:80 nginx
+```
 
 ​    O parâmetro ***—name*** nos permite atribuir um nome a um container.
 
-  ```bash
-  docker run --name nginx -d -p 8080:80 nginx
-  ```
+```bash
+docker run --name nginx -d -p 8080:80 nginx
+```
 
 - **docker ps**
   
@@ -265,8 +262,6 @@ Quando precisamos gerenciar diversos containers que precisam ser executados em c
 
 Usaremos os mesmos arquivos que criamos no exemplo anterior, mas criaremos uma pasta chamada *nginx* e nessa pasta um arquivo de nome *index.html* com o seguinte conteúdo:
 
-
-
 *nginx/index.html*
 
 ```html
@@ -321,7 +316,6 @@ services:
     # expoe a porta 6379 para que outros containers possam acessar
     expose: 
       - 6379
-
 ```
 
 Assim ficou a estrutura de nossa pasta:
