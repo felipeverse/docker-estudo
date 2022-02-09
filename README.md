@@ -211,6 +211,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     
     *main.go*
     
+    
     ```go
     package main
     
@@ -230,9 +231,11 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     }
     ```
     
+    
     **Depois, criamos o arquivo Dockerfile:**
     
     *Dockerfile*
+    
     
     ``` bash
     # Definição para usar a imagem golang versão 1.14 como base
