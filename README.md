@@ -339,7 +339,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     
     *main.go*
     
-    ![Screenshot from 2022-02-09 14-28-52.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5ca7f19c-fa04-4724-a21a-397b096a9130/Screenshot_from_2022-02-09_14-28-52.png)
+    ![Screenshot from 2022-02-09 14-28-52.png](img/05.png)
     
     Após a configuração, utilizaremos o comando ***docker-compose up*** para subirmos nosso container
     
