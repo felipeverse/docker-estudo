@@ -1,5 +1,9 @@
 # Docker
 
+Estudo realizado usando como base no vídeo Wesley Willians do canal [**Full Cycle**](https://www.youtube.com/channel/UCMUoZehUZBhLb8XaTc8TQrA) - [**Docker e Docker Compose do zero ao Deploy**](https://www.youtube.com/watch?v=yb2udL9GG2U&ab_channel=FullCycle).
+
+[**Documentação Docker**](https://docs.docker.com/)
+
 ### **Docker - Definição:**
 
 Docker é um conjunto de plataforma como produto de serviços que utiliza virtualização a nível de Sistema Operacional para entregar software em pacotes chamados **containers**. Containers são isolados uns dos outros e contém seus próprios softwares, bibliotecas e arquivos de configuração; eles podem se comunicar uns com os outros através de canais bem definidos.
