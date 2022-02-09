@@ -16,7 +16,7 @@ Um container é um padrão de unidade de software que empacota o código e todas
 
 ### **Containers vs Máquinas Virtuais**
 
-![Screenshot from 2022-02-08 09-13-42.png](img/01.png)
+![Containers vs Máquinas Virtuais](img/01.png)
 
 **CONTAINERS**
 
@@ -65,17 +65,17 @@ EXPOSE: 8000
 
 Quando criamos imagens, estamos criando processos. É importante entender que imagens tem estados imutáveis, ou seja, não podem ser alteradas. Além disso, uma camada de leitura e escrita nas imagens, que permitem manipular arquivos, porém ao derrubar essa imagem e levantar novamente, esses arquivos serão perdidos.
 
-![Screenshot from 2022-02-08 10-51-44.png](img/02.png)
+![Pull, Request and Build Images](img/02.png)
 
 ### Arquitetura do Docker
 
-![Screenshot from 2022-02-08 10-56-18.png](img/03.png)
+![Arquitetura do docker](img/03.png)
 
 O Docker utiliza uma arquitetura cliente-servidor. O Docker *cliente* fala com o Docker *daemon*, que faz o levantamento pesado do prédio, a execução e a distribuição de seus containers Docker. O cliente Docker e o daemon *can* funcionam no mesmo sistema, ou você pode conectar um cliente Docker a um daemon Docker remoto. O cliente Docker e o daemon se comunicam usando uma API REST, sobre soquetes UNIX ou uma interface de rede. Outro cliente Docker é o Docker Compose, que permite trabalhar com aplicações que consistem em um conjunto de containers.
 
 O docker host tem também um cache, que evita uso de banda desnecessário ao baixar imagens que já foram previamente baixadas. Outro recurso importante, é o gerenciamento de volumes que ele realiza, que pode montar um volume local da máquina em um container, além de um recurso de gerenciamento de networks.
 
-![Screenshot from 2022-02-08 11-02-33.png](img/04.png)
+![Arquitetura do docker 02](img/04.png)
 
 ### Docker - Comandos
 
@@ -342,7 +342,7 @@ Os arquivos de configuração recebem definições para gerar uma imagem.
     
     *main.go*
     
-    ![Screenshot from 2022-02-09 14-28-52.png](img/05.png)
+    ![Organização do Diretório](img/05.png)
     
     Após a configuração, utilizaremos o comando ***docker-compose up*** para subirmos nosso container
     
