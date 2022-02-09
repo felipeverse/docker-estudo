@@ -86,9 +86,8 @@ O docker host tem também um cache, que evita uso de banda desnecessário ao bai
 - **Docker run <IMAGE>**
   
     Cria um container a partir de uma imagem.
-
     Cria e executa container a partir da imagem de exemplo do docker, com uma mensagem auto explicativa sobre o passo-a-passo para execução.
-
+  
   ```bash
   docker run hello-world
   ```
